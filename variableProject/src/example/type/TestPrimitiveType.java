@@ -23,7 +23,28 @@ public class TestPrimitiveType {
 		//참조변수.메소드명();
 		
 		VariableSample vsamp = new VariableSample();
-		vsamp.useprimitiveType();
+//		vsamp.usePrimitiveType();
+//		
+//		System.out.println(a);
+//		
+//		vsamp.userStrig();
+//		
+//		//vsamp.printProfile();
+//		
+//		vsamp.userScanner();
+		
+//		vsamp.inputProfile2();
+		
+		VariableSample2 vsamp2 = new VariableSample2();
+		
+//		vsamp2.valueOverflow();
+		
+//		vsamp2.testWrapper();
+		
+//		vsamp2.testCasting();
+		vsamp2.testCasting2();
+		
+		
 	}
 
 }

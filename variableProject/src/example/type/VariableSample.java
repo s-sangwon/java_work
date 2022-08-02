@@ -1,6 +1,8 @@
 // 1. 패키지 선언문 : 반드시 첫줄에 작성
 package example.type;
 
+import java.util.Scanner;
+
 //2. 필요한 크래스 import 선언
 
 
@@ -22,7 +24,7 @@ public class VariableSample {
 	
 	// 자바에서 클래스 안에 메소드 작성법 :
 	// 접근제한자 [예약어] 반환자료형 메소드명(자료형 매개변수){ 코드 작성 } 
-	public void useprimitiveType() {
+	public void usePrimitiveType() {
 		// 기본자료형 확인용 메소드
 		//자바는 기보자료형 8개 제공함
 		//char, boolean, byte, short, int, long, float, double,
@@ -70,5 +72,165 @@ public class VariableSample {
 					+ "salary : " + salary);
 	}
 // int, long, float, double, char, boolean, short, byte
+	
+	// 문자변수와 문자열변수 다루기
+	public void userStrig( ) {
 
+			// 파이썬에서는 문자와 문자열 구분안함
+			// 자바는 구분함 ㅋ '' 단어하나 " " 문자열
+		char ch = 'A'; // 문자 하나값은 작은따옴표로
+		
+		//문자나열값(문자열)은 기본자료형으로 제공되지 않는다.
+		//자바에서는 String 클래스가 제공됨 : 문자열 취급 클래스임
+		// 클래스 사용법 : 클래스명 참조변수 = new클래스명();
+		// String str = new String();
+		// 자바에서 String 클래스만 예외로 사용할 수 있게 제공함
+		// String 을 기본자료형처럼 사용할 수 있게 제공
+		String str = "java";
+		str.substring(2,3);
+		System.out.println(ch + str);
+		
+		
+	}
+	
+	//실습
+	//본인의 신상정보를 변수에 기록저장한 다음, 출력 확인
+	//이름, 나이, 성별(남, 여), 키, 몸무게, 전화번호, 이메일
+	//키와 몸무게는 소숫점아래 첫째자리까지 기록함
+	
+	public void printProfile() {
+		String name = "서상원";
+		int age  = 26;
+		char gender = '남';
+		float tall = 175.9f;
+		float weight = 65.f;
+		String phone = "010-3049-6533";
+		String email = "tjgyqo2@gmail.com";
+		
+		System.out.println(name + ' ' + age + ' ' + gender + ' ' + tall + ' ' + weight + ' ' +
+				phone + ' ' + email);
+		
+	}
+	
+	//키보드 입력 테스트용 메소드
+	public void userScanner() {
+		Scanner sc = new Scanner(System.in);
+		
+		//Scanner 가 제공하는 각 자료형별 값 입력용 메소드 사용
+		// 자료형 변수명 = 참조변수.next자료형();
+		System.out.print("문자열값 입력 : ");
+		String str= sc.next();
+		System.out.println(str);
+	
+		System.out.print("정수 숫자 입력 : ");
+		int num = sc.nextInt();
+		System.out.println("num : " + num);
+		
+		System.out.print("실수 숫자 입력 : " );
+		double dnum = sc.nextDouble();
+		System.out.println("dnum : " + dnum);
+		
+		System.out.print("논리값 입력 : ");
+		boolean bool = sc.nextBoolean();
+		System.out.println("bool : " + bool);
+		
+		//Scanner 에는 char 자료형 입력 기능 없음
+		//문자하나를 String 으로 입력받아서
+		//String 클래스의 문자하나 추출하는 메소드를 문자꺼냄
+		System.out.print("문자하나 입력 : ");
+//		String s = sc.next();
+//		char ch = s.charAt(0);
+		char ch = sc.next().charAt(0);
+		System.out.println(ch);
+	}
+	
+	// 본인 신상정보 저장할 변수 선언함
+	// 각 변수에 키보드로 신상정보를 입력받아서 저장 처리함
+	// 출력 확인
+	public void inputProfile2() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("name : ");
+		String name = sc.next();
+		
+		System.out.print("age : ");
+		int age = sc.nextInt();
+		
+		System.out.print("gender : ");
+		char gender = sc.next().charAt(0);
+		
+		
+		System.out.print("tall : ");
+		double tall = sc.nextDouble();
+		
+		
+		System.out.print("weight : ");
+		double weight = sc.nextDouble();
+		
+		
+		System.out.print("phone : ");
+		String phone = sc.next();
+		
+		
+		System.out.print("email : ");
+		String email = sc.next();
+		
+		System.out.println("name : " + name);
+		System.out.println("age : " + age);
+		System.out.println("gender : " + gender);
+		System.out.println("tall : " + tall);
+		System.out.println("weight : " + weight);
+		System.out.println("phone : " + phone);
+		System.out.println("email : " + email);
+		
+	}
+	
+	public void inputProfile() {
+		Scanner sc = new Scanner(System.in);
+		String name = "서상원";
+		int age  = 26;
+		char gender = '남';
+		double tall = 175.9f;
+		double weight = 65.f;
+		String phone = "010-3049-6533";
+		String email = "tjgyqo2@gmail.com";
+		
+		System.out.print("name : ");
+		name = sc.next();
+		
+		
+		System.out.print("age : ");
+		age = sc.nextInt();
+		
+		
+		System.out.print("gender : ");
+		gender = sc.next().charAt(0);
+		
+		
+		System.out.print("tall : ");
+		tall = sc.nextDouble();
+		
+		
+		System.out.print("weight : ");
+		weight = sc.nextDouble();
+		
+		
+		System.out.print("phone : ");
+		phone = sc.next();
+		
+		
+		System.out.print("email : ");
+		email = sc.next();
+		
+		System.out.println("name : " + name);
+		System.out.println("age : " + age);
+		System.out.println("gender : " + gender);
+		System.out.println("tall : " + tall);
+		System.out.println("weight : " + weight);
+		System.out.println("phone : " + phone);
+		System.out.println("email : " + email);
+		
+	}
+	
+	
 }
