@@ -54,5 +54,17 @@ public class CastingSample {
 		int a = sc.nextInt();
 		
 		System.out.println(a +"의 2진수에 포함된 1의 갯수 : " + Integer.bitCount(a));
+		int count = 0;
+		
+		while(a!=0) {
+			if(Math.abs(a)%2 == 1) {
+				count++;}
+			a>>>=1;
+		}
+		
+
+		System.out.println(count);
+
 	}
+	
 }
