@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"operator.sample","c":"OperatorSample","l":"initVairable()"},{"p":"operator.sample","c":"OperatorSample","l":"OperatorSample()","u":"%3Cinit%3E()"}];updateSearchResults();
