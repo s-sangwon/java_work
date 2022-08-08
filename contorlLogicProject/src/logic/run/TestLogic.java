@@ -37,7 +37,28 @@ public class TestLogic {
 		DoWhileSample dws = new DoWhileSample();
 		
 //		dws.printUnicode2();
-		dws.displayMenu();
+//		dws.displayMenu();
+		
+		WhileSample ws = new WhileSample();
+		
+//		ws.testWhile1();
+//		ws.containChar();
+		ForSample fs = new ForSample();
+		
+//		fs.printGugudan();
+		
+//		fs.sumEven(10);
+//		fs.sumMinToMax(5412, 3524);
+		
+		DoubleForSample dfs = new DoubleForSample();
+//		dfs.gugudan();
+		
+//		dfs.printStar1();
+		
+		
+//		dws.displayMenu();
+	
+		dfs.printStar2(8);
 	}
 	
 	

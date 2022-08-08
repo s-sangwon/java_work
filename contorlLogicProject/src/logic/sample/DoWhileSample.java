@@ -47,10 +47,12 @@ public class DoWhileSample {
 			System.out.println("번호 선택 : ");
 			no = sc.nextInt();
 			
+			DoubleForSample dfs = new DoubleForSample();
+			
 			switch(no) {
 			case 1: break;
-			case 2: break;
-			case 3: break;
+			case 2: dfs.printStar2(5); break;
+			case 3: new WhileSample().containChar(); break;
 			case 4: break;
 			case 9: System.out.println("정말로 끝내시겠습니까?[y|n]");
 						char answer = sc.next().toUpperCase().charAt(0);
