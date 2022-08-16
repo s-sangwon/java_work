@@ -19,7 +19,7 @@ public class Book {
 	public String bookInfomation() {
 		return title +"\t"+ price +"\t"+ discountRate +"\t"+ author;
 	}
-	
+
 	// set,get
 	public void setTitle(String title) { this.title = title; }
 	public String getTitle() {return this.title;}

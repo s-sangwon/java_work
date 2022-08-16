@@ -6,14 +6,24 @@ public class EmpArrayTest {
 
 	public static void main(String[] args) {
 		// Employee 실행용 클래스
-		Employee[] ear = new Employee[3];
-		ear[0] = new Employee();
-		ear[1] = new Employee(201503, "박길동", 29, 'M', "010-1234-5678","경기도 의정부시");
-		ear[2] = new Employee(201004, "김철수", "개발부", "과장", 34, 'M', 4500000, 0.15, "010-2143-9876", "서울시 노원구 노원동 123");
-		System.out.println(ear[0].empInformation());
-		System.out.println(ear[1].empInformation());
-		System.out.println(ear[2].empInformation());
+//		Employee[] ear = new Employee[3];
+//		ear[0] = new Employee();
+//		ear[1] = new Employee(201503, "박길동", 29, 'M', "010-1234-5678","경기도 의정부시");
+//		ear[2] = new Employee(201004, "김철수", "개발부", "과장", 34, 'M', 4500000, 0.15, "010-2143-9876", "서울시 노원구 노원동 123");
+		Employee[] ear = new Employee[] {
+				new Employee(),
+				new Employee(201503, "박길동", 29, 'M', "010-1234-5678","경기도 의정부시"),
+				new Employee(201004, "김철수", "개발부", "과장", 34, 'M', 4500000, 0.15, "010-2143-9876", "서울시 노원구 노원동 123")
+		};
 		
+		for (Employee emp : ear) {
+			System.out.println(emp.empInformation());
+		}
+		
+//		System.out.println(ear[0].empInformation());
+//		System.out.println(ear[1].empInformation());
+//		System.out.println(ear[2].empInformation());
+//		
 		ear[0].setEmpNo(201305);
 		ear[0].setEmpName("이영희");
 		ear[0].setDept("총무부");
@@ -37,15 +47,15 @@ public class EmpArrayTest {
 				(int)(ear[1].getSalary()+(ear[1].getSalary()*ear[1].getBonusPoint())) * 12 ,
 				(int)(ear[2].getSalary()+(ear[2].getSalary()*ear[2].getBonusPoint())) * 12 };
 		
-			
+		
 		
 		System.out.println();
 		System.out.println(ear[0].getEmpName() + "의 연봉 : " + s[0]);
 		System.out.println(ear[1].getEmpName() + "의 연봉 : " + s[1]);
 		System.out.println(ear[2].getEmpName() + "의 연봉 : " + s[2]);
-		
+		s[2] = 2100000000;
 		System.out.println();
-		System.out.println("직원들의 연봉의 평균 : " +(s[0]+s[1]+s[2])/3);
+		System.out.println("직원들의 연봉의 평균 : " +((long)s[0]+s[1]+s[2])/3);
 	}
 
 }

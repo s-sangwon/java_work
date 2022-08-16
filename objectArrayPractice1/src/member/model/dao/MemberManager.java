@@ -6,16 +6,25 @@ import member.model.dto.Member;
 
 public class MemberManager {
 	public static final int SIZE = 10;
-	public Member[] m;
+	private Member[] m= new Member[SIZE];
 	private int memberCount;
-	private Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 	
-	public MemberManager() {
-		super();
-		memberCount = 0;
-		m = new Member[SIZE];
+	{
+		m[0] = new Member("kim123", "김유신", "pwkkk34!", "kim123@naver.com", 'M', 35);
+		m[1] = new Member("park123", "박철수", "park123!", "park123@naver.com", 'M', 15);
+		m[2] = new Member("kim321", "김영희", "kim321!", "kim321@naver.com", 'F', 13);
+		m[3] = new Member("hong123", "홍길동", "hong123!", "hong123@naver.com", 'M', 45);
+		m[4] = new Member("yksrose77", "윤경숙", "yksrose77#", "yksrose77@naver.com", 'F', 29);
+		memberCount = 5;
 	}
 	
+	
+	public Member[] getM() {
+		return m;
+	}
+
+
 	public int getMemberCount() {
 		return memberCount;
 	}
@@ -96,11 +105,32 @@ public class MemberManager {
 	}
 	
 	public void deleteMember() {
-		for(int i=0; i<memberCount; i++) {
-			m[i] = null;
+//		for(int i=0; i<memberCount; i++) {
+//			m[i] = null;
+//		}
+//		memberCount = 0;
+		
+		System.out.print("삭제할 회원 아이디 : ");
+		int idx = searchMemberId(sc.next());
+		if(idx > -1) {
+			printMember(idx);
+			System.out.print("정말로 삭제하시겠습니까?(y/n) : ");
+			if(sc.next().toUpperCase().charAt(0) == 'Y') {
+				if(idx == memberCount-1)
+					m[idx] = null;
+				else {
+					for(int i=idx; i<memberCount; i++) {
+						memberSwap(i,i+1);
+					}
+					m[memberCount] = null;
+				}
+				memberCount--;			
+			}
 		}
-		memberCount = 0;
-		System.out.println("회원 삭제 완료");
+		else {
+			System.out.println("회원정보가 존재하지 않습니다.");
+		}
+		
 	}
 	
 	public void printAllMember() {
@@ -114,6 +144,7 @@ public class MemberManager {
 		m[a] = m[b];
 		m[b] = temp;
 		System.out.println("swap member(index)" + a +"<->" +b);
+	
 	}
 	
 	public void sortIDAsc() {

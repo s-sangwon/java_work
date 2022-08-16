@@ -113,11 +113,14 @@ public class MemberMenu {
 			System.out.print(menu);
 			int no = sc.nextInt();
 			switch (no) {
-			case 1:	mManager.sortIDAsc(); break;
-			case 2:	mManager.sortIDDes(); break;
-			case 3:	mManager.sortAgeAsc(); break;
-			case 4:	mManager.sortAgeDes(); break;
-			case 5:	mManager.sortGenderDes(); break;
+			case 1:	
+				mManager.sortIDAsc();
+				mManager.printAllMember();
+				break;
+			case 2:	mManager.sortIDDes(); mManager.printAllMember(); break;
+			case 3:	mManager.sortAgeAsc(); mManager.printAllMember(); break;
+			case 4:	mManager.sortAgeDes(); mManager.printAllMember(); break;
+			case 5:	mManager.sortGenderDes(); mManager.printAllMember(); break;
 			case 9:	
 				System.out.println("메인 메뉴로 화면 이동합니다.");
 				return;
@@ -149,7 +152,7 @@ public class MemberMenu {
 					mManager.printMember(idx);
 					System.out.print("변경할 암호 : ");
 					String password = sc.next();
-					mManager.m[idx].setPassword(password);
+					mManager.getM()[idx].setPassword(password);
 					System.out.println("회원의 정보가 변경되었습니다.");
 				}
 				else
@@ -163,7 +166,7 @@ public class MemberMenu {
 					mManager.printMember(idx);
 					System.out.print("변경할 이메일주소 : ");
 					String email = sc.next();
-					mManager.m[idx].setEmail(email);
+					mManager.getM()[idx].setEmail(email);
 					System.out.println("회원의 정보가 변경되었습니다.");
 				}
 				else
@@ -177,7 +180,7 @@ public class MemberMenu {
 					mManager.printMember(idx);
 					System.out.print("변경할 나이 : ");
 					int age = sc.nextInt();
-					mManager.m[idx].setAge(age);
+					mManager.getM()[idx].setAge(age);
 					System.out.println("회원의 정보가 변경되었습니다.");
 				}
 				else
